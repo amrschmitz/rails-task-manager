@@ -1,0 +1,24 @@
+
+<%= link_to "/tasks" do %>
+<i class="fas fa-chevron-left"></i>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<% if @task.completed %>
+  <input type="checkbox" checked />
+  <% else %>
+  <input type="checkbox" unchecked />
+<% end %>
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+
+<br>
+<br>
+
+<%= link_to task_path(@task), method: :delete do %>
+<i class="fas fa-trash-alt"></i>
+<% end %>
+

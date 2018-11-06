@@ -1,0 +1,26 @@
+<h1>My Tasks</h1>
+
+<br>
+<br>
+
+
+<% @tasks.each do |task| %>
+  <hr>
+  <div class="inline">
+    <% if task.completed %>
+    <input type="checkbox" checked />
+    <% else %>
+    <input type="checkbox" unchecked />
+    <% end %>
+    <!-- <p><strong><%= task.title %></strong></p> -->
+    <%= link_to task.title, task_path(task) %>
+  </div>
+<% end %>
+<hr>
+
+<br>
+<br>
+
+<%= link_to "/tasks/new" do %>
+<i class="fas fa-plus"></i>
+<% end %>
