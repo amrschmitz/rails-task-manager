@@ -4,19 +4,20 @@
 <br>
 
 
-<% @tasks.each do |task| %>
-  <hr>
-  <div class="inline">
-    <% if task.completed %>
-    <input type="checkbox" checked />
-    <% else %>
-    <input type="checkbox" unchecked />
-    <% end %>
-    <!-- <p><strong><%= task.title %></strong></p> -->
-    <%= link_to task.title, task_path(task) %>
-  </div>
-<% end %>
-<hr>
+<div class="wrapper">
+  <% @tasks.each do |task| %>
+    <div class="card">
+      <% if task.completed %>
+      <input type="checkbox" checked />
+      <% else %>
+      <input type="checkbox" unchecked />
+      <% end %>
+      <!-- <p><strong><%= task.title %></strong></p> -->
+      <%= link_to task.title, task_path(task) %>
+    </div>
+  <% end %>
+</div>
+
 
 <br>
 <br>
